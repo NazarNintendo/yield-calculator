@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "yield-calculator"
+version = "0.1.0"
+description = "A simple yield calculator for bonds and other fixed income instruments."
+authors = ["Nazar Kalinichenko <nazar.nichen@gmail.com>"]
+readme = "README.md"
+packages = [{include = "yield_calculator"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+matplotlib = "^3.7.1"
+pyqt5 = "^5.15.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
