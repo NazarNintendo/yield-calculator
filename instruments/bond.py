@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABC
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import date
 from math import ceil
 
 DAYS_IN_YEAR = 365.0
@@ -17,13 +17,13 @@ class AbstractBond(ABC):
         isin (str): International Securities Identification Number.
         face_value (float): The amount of money that the holder of a bond will
                             get back at the bond's maturity date.
-        maturity_date (datetime): The date when the bond expires.
+        maturity_date (date): The date when the bond expires.
         price (float): The price of the bond.
         days_to_maturity (int): The number of days to maturity.
         years_to_maturity (float): The fractional value of years to maturity.
     """
     isin: str
-    maturity_date: datetime
+    maturity_date: date
     price: float
     face_value: float = field(default=DEFAULT_FACE_VALUE, kw_only=True)
 
@@ -33,7 +33,7 @@ class AbstractBond(ABC):
         :return: None
         :raises: ValueError if the bond has already expired.
         """
-        self.days_to_maturity = (self.maturity_date - datetime.now()).days
+        self.days_to_maturity = (self.maturity_date - date.today()).days
 
         if self.days_to_maturity < 1:
             raise ValueError("Bond has already expired.")

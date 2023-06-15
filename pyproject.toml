@@ -10,6 +10,10 @@ packages = [{include = "yield_calculator"}]
 python = "^3.10"
 matplotlib = "^3.7.1"
 pyqt5 = "^5.15.9"
+pandas = "^2.0.2"
+requests = "^2.31.0"
+openpyxl = "^3.1.2"
+lxml = "^4.9.2"
 
 
 [build-system]
